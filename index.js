@@ -1,9 +1,7 @@
 import { Meteor } from "meteor/meteor"
-import { facebookConnectPlugin, NotUnderCordovaEnv } from "./facebookConnectPlugin"
+import { facebookConnectPlugin } from "./facebookConnectPlugin"
+import loginWithNativeFacebook from "./loginWithNativeFacebook"
 
-Meteor.loginWithNativeFacebook = ()=>{
-
-};
+Meteor.loginWithNativeFacebook = loginWithNativeFacebook;
 
 export {facebookConnectPlugin};
-export {NotUnderCordovaEnv};

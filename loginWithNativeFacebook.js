@@ -4,4 +4,8 @@
 * */
 export default (options, callback)=>{
 
+  if(!Meteor.isCordova){
+    return Meteor.loginWithFacebook(options, callback)
+  }
+
 };
