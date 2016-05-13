@@ -14,7 +14,8 @@ Package.describe({
 Npm.depends({
   "chai": "3.5.0",
   "sinon":"1.17.4",
-  "sinon-chai": "2.8.0"
+  "sinon-chai": "2.8.0",
+  "underscore":"1.8.3"
 });
 
 Cordova.depends({
@@ -26,7 +27,9 @@ Package.onUse(function(api) {
   api.use('ecmascript');
   api.use("accounts-base");
   api.use("accounts-facebook");
+  api.use("http");
   api.imply("accounts-facebook");
+  api.addFiles("server.js", 'server');
   api.mainModule("index.js")
 });
 
@@ -34,10 +37,12 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
 
   api.use("ecmascript");
+  api.use("http");
   api.use("jsep:facebook-native-login");
   api.use("practicalmeteor:mocha@2.4.5_2");
 
   api.addFiles("tests/client.js", "client");
+  api.addFiles("tests/server.js", "server");
   api.addFiles("tests/facebook_connect_tests.js", "client");
 
 });
