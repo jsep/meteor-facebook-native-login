@@ -3,11 +3,10 @@ import chai from "chai"
 import { expect } from "chai"
 import sinon from "sinon"
 import sinonChai from "sinon-chai"
-import { facebookConnectPlugin} from "../facebookConnectPlugin"
+import { facebookConnectPlugin} from "meteor/jsep:facebook-native-login"
 
 chai.use(sinonChai);
 
-console.log(facebookConnectPlugin);
 
 describe("Native facebook login", ()=>{
 
@@ -31,7 +30,7 @@ describe("Native facebook login", ()=>{
   it("Should call native facebook api to login", ()=>{
     Meteor.isCordova = true;
 
-    Meteor.loginWithNativeFacebook(this.permissions);
+    Meteor.loginWithNativeFacebook({requestPermissions:this.permissions}, ()=>{});
     expect(facebookConnectPlugin.login).to.have.been.calledWith(this.permissions);
 
     Meteor.isCordova = false;

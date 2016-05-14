@@ -8,12 +8,11 @@ class NotUnderCordovaEnv extends Error{
   }
 }
 
-
 /*
 * Create a fake 'facebookConnectPlugin' object that  throws an error
 * if it call under a not Cordova environment
 * */
-let facebookConnectPlugin = global.facebookConnectPlugin || (()=>{
+const facebookConnectPlugin = global.facebookConnectPlugin || (()=>{
 
     let fakeFacebookConnectPlugin = {};
 

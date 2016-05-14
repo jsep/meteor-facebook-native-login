@@ -29,7 +29,7 @@ Package.onUse(function(api) {
   api.use("accounts-facebook");
   api.use("http");
   api.imply("accounts-facebook");
-  api.addFiles("server.js", 'server');
+  api.addFiles("NativeFacebookLoginHandler.js", 'server');
   api.mainModule("index.js")
 });
 

@@ -4,7 +4,7 @@ import sinonChai from "sinon-chai"
 import { HTTP } from "meteor/http"
 import { expect } from "chai"
 import { describe, it } from "meteor/practicalmeteor:mocha"
-import { NativeFacebookLoginHandler } from "../server"
+import { NativeFacebookLoginHandler } from "../NativeFacebookLoginHandler"
 
 chai.use(sinonChai);
 
