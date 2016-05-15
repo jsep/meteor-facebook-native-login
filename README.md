@@ -10,6 +10,13 @@ This package add a new function `Meteor.loginWithNativeFacebook(options, callbac
 Meteor.loginWithFacebook`. If you call under a not Cordova
 environment it with will call `Meteor.loginWithFacebook(options, callback);`.
 
+Add this to `mobile-config.js`:
+```
+App.configurePlugin('cordova-plugin-facebook4', {
+  APP_ID: 'app_id',
+  APP_NAME: 'my.app.name'
+});
+```
 
 ## Using facebookConnectPlugin
 This package export `facebookConnectPlugin`, if you are not running in Cordova it will export a object with the same
