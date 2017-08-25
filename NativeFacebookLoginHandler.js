@@ -57,7 +57,7 @@ class NativeFacebookLoginHandler {
       return HTTP.get(this._apiUri, {
         params: {
           access_token: accessToken,
-          fields: this._fields
+          fields: this._fields.join(),
         }
       }).data
     } catch (ex) {
